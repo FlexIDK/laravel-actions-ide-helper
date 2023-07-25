@@ -1,0 +1,40 @@
+# npm & composer
+node_modules/
+vendor/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.idea/
+.vscode/
+.guthub/
+.fleet/
+
+# Laravel
+/public/build
+/public/hot
+/public/storage
+/public/sitemap.xml
+/storage/*.key
+/stubs/
+.phpunit.cache/
+.phpunit.cache
+.env
+.env.backup
+.env.production
+.phpstorm.meta.php
+
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+docker-compose.override.yml
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# OS X
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*

@@ -1,0 +1,42 @@
+{
+    "name": "one23/laravel-actions-ide-helper",
+    "keywords": [
+        "laravel",
+        "laravel-actions-ide-helper"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/FlexIDK/laravel-actions-ide-helper",
+    "description": "Generate a new IDE Helper file for Laravel Actions.",
+    "license": "MIT",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "Alexander Wulf",
+            "email": "dev@alexfwulf.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8",
+        "illuminate/foundation": "^v10",
+        "illuminate/console": "^v10",
+        "illuminate/support": "^v10",
+        "spatie/laravel-package-tools": "^1",
+        "lorisleiva/laravel-actions": "^v2",
+        "lorisleiva/lody": "^v0.4",
+        "riimu/kit-pathjoin": "^v1",
+        "phpdocumentor/reflection": "5.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wulfheart\\LaravelActionsIdeHelper\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wulfheart\\LaravelActionsIdeHelper\\LaravelActionsIdeHelperServiceProvider"
+            ]
+        }
+    }
+}
