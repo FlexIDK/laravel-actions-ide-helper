@@ -20,9 +20,7 @@ class Method extends BaseTag
         protected ?Type $returnType = null,
         protected bool $static = false,
         protected $description = null
-    ) {
-
-    }
+    ) {}
 
     public static function create(string $body)
     {
@@ -37,12 +35,12 @@ class Method extends BaseTag
         }
 
         if ($this->returnType) {
-            $s .= (string) $this->returnType.' ';
+            $s .= (string)$this->returnType . ' ';
         }
 
-        $s .= $this->methodName.'(';
+        $s .= $this->methodName . '(';
 
-        $s .= collect($this->arguments)->map(fn (Argument $arg) => $this->stringifyArgument($arg))->implode(', ');
+        $s .= collect($this->arguments)->map(fn(Argument $arg) => $this->stringifyArgument($arg))->implode(', ');
 
         $s .= ')';
 
@@ -54,7 +52,7 @@ class Method extends BaseTag
         $s = '';
         $type = $argument->getType();
         if ($type) {
-            $s .= (string) $type.' ';
+            $s .= (string)$type . ' ';
         }
 
         if ($argument->isVariadic()) {
@@ -65,11 +63,11 @@ class Method extends BaseTag
             $s .= '&';
         }
 
-        $s .= '$'.$argument->getName();
+        $s .= '$' . $argument->getName();
 
         $default = $argument->getDefault();
         if ($default) {
-            $s .= ' = '.$default;
+            $s .= ' = ' . $default;
         }
 
         return $s;

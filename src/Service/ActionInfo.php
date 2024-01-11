@@ -54,7 +54,7 @@ final class ActionInfo
     {
         $this->fqsen = $name;
         $this->name = class_basename($name);
-        $this->namespace = Str::of($name)->beforeLast('\\'.$this->name);
+        $this->namespace = Str::of($name)->beforeLast('\\' . $this->name);
 
         return $this;
     }

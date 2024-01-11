@@ -24,7 +24,7 @@ class BuildIdeHelper
      */
     public function build(array $actionInfos): string
     {
-        $groups = collect($actionInfos)->groupBy(function (ActionInfo $item) {
+        $groups = collect($actionInfos)->groupBy(function(ActionInfo $item) {
             return $item->namespace;
         })->toArray();
 
@@ -109,6 +109,5 @@ class BuildIdeHelper
                 )
             )
             ->getNode();
-
     }
 }

@@ -17,7 +17,9 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class ActionInfoFactory
 {
-    /** @return array<\Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo> */
+    /**
+     * @return array<\Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo>
+     */
     public static function create(string $path): array
     {
         $factory = new self();
@@ -38,20 +40,22 @@ class ActionInfoFactory
         }
 
         return $ais;
-
     }
 
-    /** @return array<class-string,array<class-string>> */
+    /**
+     * @return array<class-string,array<class-string>>
+     */
     protected function loadFromPath(string $path)
     {
         $res = Lody::classes($path)->isNotAbstract();
+
         /** @var array<class-string,array<class-string>> $traits */
         return collect(ActionInfo::ALL_TRAITS)
-            ->map(fn ($trait, $key) => [$trait => $res->hasTrait($trait)->all()])
+            ->map(fn($trait, $key) => [$trait => $res->hasTrait($trait)->all()])
             ->collapse()
-            ->map(function ($item, $key) {
+            ->map(function($item, $key) {
                 return collect($item)
-                    ->map(fn ($i) => [
+                    ->map(fn($i) => [
                         'item' => $i,
                         'group' => $key,
                     ])
@@ -60,7 +64,7 @@ class ActionInfoFactory
             ->values()
             ->collapse()
             ->groupBy('item')
-            ->map(fn ($item) => $item->pluck('group')->toArray())
+            ->map(fn($item) => $item->pluck('group')->toArray())
             ->toArray();
     }
 
@@ -70,16 +74,15 @@ class ActionInfoFactory
     protected function loadPhpDocumentorReflectionClassMap(string $path): array
     {
         $finder = Finder::create()->files()->in($path)->name('*.php');
-        $files = collect($finder)->map(fn (SplFileInfo $file) => new LocalFile($file->getRealPath()))->toArray();
+        $files = collect($finder)->map(fn(SplFileInfo $file) => new LocalFile($file->getRealPath()))->toArray();
 
         /** @var \phpDocumentor\Reflection\Php\Project $project */
         $project = ProjectFactory::createInstance()->create('Laravel Actions IDE Helper', $files);
 
         return collect($project->getFiles())
-            ->map(fn (File $f) => $f->getClasses())
+            ->map(fn(File $f) => $f->getClasses())
             ->collapse()
-            ->mapWithKeys(fn ($item, string $key) => [Str::of($key)->ltrim('\\')->toString() => $item])
+            ->mapWithKeys(fn($item, string $key) => [Str::of($key)->ltrim('\\')->toString() => $item])
             ->toArray();
-
     }
 }

@@ -8,7 +8,7 @@
     "homepage": "https://github.com/FlexIDK/laravel-actions-ide-helper",
     "description": "Generate a new IDE Helper file for Laravel Actions.",
     "license": "MIT",
-    "version": "v0.1",
+    "version": "v0.1.1",
     "authors": [
         {
             "name": "Alexander Wulf",
@@ -26,6 +26,11 @@
         "riimu/kit-pathjoin": "^v1",
         "phpdocumentor/reflection": "5.x-dev"
     },
+    "require-dev": {
+        "laravel/framework": "^v10",
+        "laravel/pint": "^v1.13.8",
+        "phpstan/phpstan": "1.10.55"
+    },
     "autoload": {
         "psr-4": {
             "Wulfheart\\LaravelActionsIdeHelper\\": "src"
@@ -37,5 +42,13 @@
                 "Wulfheart\\LaravelActionsIdeHelper\\LaravelActionsIdeHelperServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "pint": "@php ./vendor/laravel/pint/builds/pint",
+        "phpstan": "@php ./vendor/bin/phpstan analyse --memory-limit=2G",
+        "code-quality": [
+            "@pint",
+            "@phpstan"
+        ]
     }
 }

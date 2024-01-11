@@ -39,7 +39,7 @@ class DocBlockGeneratorBase implements DocBlockGeneratorInterface
     protected function convertArguments(array $arguments): array
     {
         return collect($arguments)
-            ->transform(fn (Argument $arg) => ['name' => $arg->getName(), 'type' => $arg->getType()])
+            ->transform(fn(Argument $arg) => ['name' => $arg->getName(), 'type' => $arg->getType()])
             ->toArray();
     }
 
@@ -47,7 +47,7 @@ class DocBlockGeneratorBase implements DocBlockGeneratorInterface
     {
         foreach ($methods as $method) {
             $m = collect($info->classInfo->getMethods())
-                ->filter(fn (\phpDocumentor\Reflection\Php\Method $m) => $m->getName() == $method)
+                ->filter(fn(\phpDocumentor\Reflection\Php\Method $m) => $m->getName() == $method)
                 ->first();
             if (! empty($m)) {
                 return $m;

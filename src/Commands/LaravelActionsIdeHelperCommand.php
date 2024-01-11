@@ -16,8 +16,7 @@ class LaravelActionsIdeHelperCommand extends Command
 
     public function handle()
     {
-
-        $actionsPath = Path::join(app_path().'/Actions');
+        $actionsPath = Path::join(app_path() . '/Actions');
 
         $outfile = Path::join(base_path(), '/_ide_helper_actions.php');
 
@@ -27,6 +26,6 @@ class LaravelActionsIdeHelperCommand extends Command
 
         file_put_contents($outfile, $result);
 
-        $this->comment('IDE Helpers generated for Laravel Actions at '.Str::of($outfile));
+        $this->comment('IDE Helpers generated for Laravel Actions at ' . Str::of($outfile));
     }
 }

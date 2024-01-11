@@ -21,7 +21,6 @@ class AsJobGenerator extends DocBlockGeneratorBase implements DocBlockGeneratorI
      */
     public function generate(ActionInfo $info): array
     {
-
         $method = $this->findMethod($info, 'asJob', 'handle');
 
         if ($method == null) {
