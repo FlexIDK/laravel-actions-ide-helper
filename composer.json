@@ -8,7 +8,7 @@
     "homepage": "https://github.com/FlexIDK/laravel-actions-ide-helper",
     "description": "Generate a new IDE Helper file for Laravel Actions.",
     "license": "MIT",
-    "version": "v0.2.2",
+    "version": "v0.2.3",
     "authors": [
         {
             "name": "Alexander Wulf",
@@ -24,7 +24,7 @@
         "lorisleiva/laravel-actions": "^v2",
         "lorisleiva/lody": "^v0.4|^v0.5",
         "riimu/kit-pathjoin": "^v1",
-        "phpdocumentor/reflection": "^5"
+        "phpdocumentor/reflection": "^5.3.3"
     },
     "require-dev": {
         "laravel/framework": "^v10|^v11",
