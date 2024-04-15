@@ -5,21 +5,22 @@ namespace Wulfheart\LaravelActionsIdeHelper\Service\Generator\DocBlock\Custom;
 use phpDocumentor\Reflection\DocBlock\Tags\BaseTag;
 use phpDocumentor\Reflection\Php\Argument;
 use phpDocumentor\Reflection\Type;
+use phpDocumentor\Reflection\DocBlock\Description;
 
 class Method extends BaseTag
 {
-    protected $name = 'method';
+    protected string $name = 'method';
 
     /**
-     * @param  array<\phpDocumentor\Reflection\Php\Argument>  $arguments
-     * @param  \phpDocumentor\Reflection\DocBlock\Description|null  $description
+     * @param array<\phpDocumentor\Reflection\Php\Argument>  $arguments
+     * @param Description|null  $description
      */
     public function __construct(
         protected string $methodName,
         protected array $arguments = [],
         protected ?Type $returnType = null,
         protected bool $static = false,
-        protected $description = null
+        protected ?Description $description = null
     ) {}
 
     public static function create(string $body)
