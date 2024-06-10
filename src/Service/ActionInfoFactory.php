@@ -18,7 +18,7 @@ use Symfony\Component\Finder\SplFileInfo;
 class ActionInfoFactory
 {
     /**
-     * @return array<\Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo>
+     * @return \Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo[]
      */
     public static function create(string $path): array
     {

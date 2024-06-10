@@ -3,7 +3,7 @@
 namespace Wulfheart\LaravelActionsIdeHelper\Service\Generator\DocBlock;
 
 use Lorisleiva\Actions\Concerns\AsObject;
-use phpDocumentor\Reflection\DocBlock\Tags\Method;
+use phpDocumentor\Reflection\Php\Method;
 use Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo;
 
 class AsObjectGenerator extends DocBlockGeneratorBase implements DocBlockGeneratorInterface
@@ -18,6 +18,13 @@ class AsObjectGenerator extends DocBlockGeneratorBase implements DocBlockGenerat
         /** @var Method $method */
         $method = $this->findMethod($info, 'handle');
 
-        return $method == null ? [] : [new \Wulfheart\LaravelActionsIdeHelper\Service\Generator\DocBlock\Custom\Method('run', $method->getArguments(), $method->getReturnType(), true)];
+        return $method == null ? [] : [
+            new \Wulfheart\LaravelActionsIdeHelper\Service\Generator\DocBlock\Custom\Method(
+                'run',
+                $method->getArguments(),
+                $method->getReturnType(),
+                true
+            ),
+        ];
     }
 }

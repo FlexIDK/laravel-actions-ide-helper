@@ -25,8 +25,6 @@ php artisan ide-helper:actions
 
 [https://github.com/Wulfheart/laravel-actions-ide-helper](https://github.com/Wulfheart/laravel-actions-ide-helper)
 
-Add support PHP 8.1/8.2/8.3 + update library
-
 ## Security
 
 ## License
