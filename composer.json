@@ -2,13 +2,14 @@
     "name": "one23/laravel-actions-ide-helper",
     "keywords": [
         "laravel",
-        "laravel-actions-ide-helper"
+        "laravel-actions-ide-helper",
+        "laravel-actions"
     ],
     "type": "library",
     "homepage": "https://github.com/FlexIDK/laravel-actions-ide-helper",
-    "description": "Generate a new IDE Helper file for Laravel Actions.",
+    "description": "Generate a Laravel Actions IDE Helper.",
     "license": "MIT",
-    "version": "v0.2.4",
+    "version": "v0.3",
     "authors": [
         {
             "name": "Alexander Wulf",
