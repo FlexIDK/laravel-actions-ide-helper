@@ -23,9 +23,9 @@
         "illuminate/support": "^v10|^v11|^v12",
         "spatie/laravel-package-tools": "^1",
         "lorisleiva/laravel-actions": "^v2",
-        "lorisleiva/lody": "^v0.4|^v0.5",
+        "lorisleiva/lody": "^v0.4|^v0.5|^v0.6",
         "riimu/kit-pathjoin": "^v1",
-        "phpdocumentor/reflection": "^6"
+        "phpdocumentor/reflection": "^5.1|^6"
     },
     "require-dev": {
         "laravel/framework": "^v10|^v11|^v12",

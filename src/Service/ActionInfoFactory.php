@@ -22,7 +22,7 @@ class ActionInfoFactory
      */
     public static function create(string $path): array
     {
-        $factory = new self();
+        $factory = new self;
         $classes = $factory->loadFromPath($path);
         $classMap = $factory->loadPhpDocumentorReflectionClassMap($path);
         $ais = [];

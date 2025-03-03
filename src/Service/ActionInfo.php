@@ -47,7 +47,7 @@ final class ActionInfo
 
     public static function create(): ActionInfo
     {
-        return new ActionInfo();
+        return new ActionInfo;
     }
 
     public function setName(string $name): ActionInfo

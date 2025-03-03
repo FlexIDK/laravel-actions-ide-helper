@@ -11,17 +11,17 @@ class DocBlockGeneratorBase implements DocBlockGeneratorInterface
 {
     public static function create(): static
     {
-        return new static();
+        return new static;
     }
 
     protected function resolveType(string $type): Type
     {
-        return (new TypeResolver())->resolve($type);
+        return (new TypeResolver)->resolve($type);
     }
 
     protected function resolveAsUnionType(string ...$types): Type
     {
-        return (new TypeResolver())->resolve(implode('|', $types));
+        return (new TypeResolver)->resolve(implode('|', $types));
     }
 
     public function generate(ActionInfo $info): array

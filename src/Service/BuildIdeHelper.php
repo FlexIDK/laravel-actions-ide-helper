@@ -16,7 +16,7 @@ class BuildIdeHelper
 {
     public static function create(): BuildIdeHelper
     {
-        return new BuildIdeHelper();
+        return new BuildIdeHelper;
     }
 
     /**
@@ -33,7 +33,7 @@ class BuildIdeHelper
          * @var string $namespace
          * @var \Wulfheart\LaravelActionsIdeHelper\Service\ActionInfo[] $items
          */
-        $factory = new BuilderFactory();
+        $factory = new BuilderFactory;
         foreach ($groups as $namespace => $items) {
             $ns = $factory->namespace($namespace);
             foreach ($items as $item) {
@@ -42,7 +42,7 @@ class BuildIdeHelper
             $nodes[] = $ns->getNode();
         }
         $nodes[] = $this->getTraitIdeHelpers($factory);
-        $printer = new Standard();
+        $printer = new Standard;
         $data = $printer->prettyPrintFile($nodes);
 
         return $data;
@@ -61,19 +61,19 @@ class BuildIdeHelper
     protected function serializeDocBlocks(Tag ...$tags): string
     {
         $db = new DocBlock('', null, $tags);
-        $serializer = new Serializer();
+        $serializer = new Serializer;
 
         return $serializer->getDocComment($db);
     }
 
     protected function resolveType(string $type): Type
     {
-        return (new TypeResolver())->resolve($type);
+        return (new TypeResolver)->resolve($type);
     }
 
     protected function resolveAsUnionType(string ...$types): Type
     {
-        return (new TypeResolver())->resolve(implode('|', $types));
+        return (new TypeResolver)->resolve(implode('|', $types));
     }
 
     protected function getTraitIdeHelpers(BuilderFactory $factory): \PhpParser\Node
